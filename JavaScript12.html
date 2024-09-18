@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | Ejemplo 12</title>
+    <script>
+        function calcular(){
+            let xb =document.getElementById('txtBase').value;
+            if (xb==0){
+                alert('Debes ingresar un numero mayor a 0')
+
+            }                           
+            let xa = document.getElementById('txtAlt').value;
+            if (xa==0){
+                alert('Debes ingresar un numero mayor a 0')
+            }
+            let xarea = (xa * xb)/2;
+            document.getElementById('txtArea').value = xarea.toFixed(2);
+
+        }
+        function cancelar(){
+            document.getElementById('txtBase').value;
+            document.getElementById('txtAlt').value;
+            document.getElementById('txtArea').value='0.00';
+            document.getElementById('txtBase').focus();//Focalizamos el objeto texto base
+
+        }
+        
+    </script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div style="text-align:center ;">
+        <img src="https://cdn.pixabay.com/photo/2015/10/11/11/20/banner-982162_1280.jpg" width="80%" height="400px" alt="">
+    </div>
+    
+    <h1>AREA DEL TRIANGULO</h1>
+    <form action="">
+        <table>
+            <tr>
+                <td>Base</td>
+                <td><input type="number" name="" id="txtBase">m</td>
+            </tr>
+            <tr>
+                <td>Altura</td>
+                <td><input type="number" min="1" max="20" name="" id="txtAlt">m</td>
+            </tr>
+            <tr>
+                <td>Area</td>
+                <td><input type="text" name="" value="0.00" id="txtArea" disabled>m2</td>
+            </tr>
+            <tr>
+                <td><input class="objeto" onclick="calcular();" type="button" value="Calcular"></td>
+                <td><input class="objeto" onclick="cancelar();" type="button" value="Cancelar"></td>
+            </tr>
+        </table>
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+        h1{
+            text-align: center;
+        }
+        .objeto{
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer; /*muestra una mano*/
+        }
+        table{
+            margin: auto;
+            width: 50%;
+        }
+        input{
+          
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .objeto:hover{
+            background-color: goldenrod;
+            font-weight: bold;
+        }

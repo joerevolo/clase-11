@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | Ejemplo 11</title>
+    <script>
+        function procesar(){
+            //obtener el importe en soles
+            let ximp = document.getElementById('txtImpSoles').value; 
+            //obtener el tipo de cambio
+            let xtipo = document.getElementById('txtTipo').value;
+            //calcular dolares 
+            let xdol = ximp / xtipo
+            //colocar el resultado en dolares 
+            document.getElementById('txtImpDol').value=xdol.toFixed(2);
+        }
+        function limpiar(){
+            document.getElementById('txtImpSoles').value="";
+            document.getElementById('txtImpDol').value="";
+
+            
+        }
+        function color_inicial(){
+                document.getElementById('txtImpSoles').style.backgroundColor='lightgreen' //Cambia el color de fondo cuando se focaliza evento onfocus
+            }
+        
+        function color_final(){
+                document.getElementById('txtImpSoles').style.backgroundColor="white" //Cambia de color cuando píerde la focalizacion evento onblur
+            }
+
+            
+
+    </script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <h1>CONVERTIR SOLES A DOLARES</h1>
+    <hr>
+    <form action="">
+        <table>
+            <tr>
+                <td>Importe S/</td>
+                <td>
+                    <input type="text" onblur="color_final();" onfocus="color_inicial();" name="" id="txtImpSoles">
+                </td>
+            </tr>
+            <tr>
+                <td>Tipo de cambio</td>
+                <td>
+                    <input style="font-weight:bold ;" type="text" name="" id="txtTipo" value="3.80" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Importe de U$</td>
+                <td><input type="text" name="" id="txtImpDol" disabled></td>
+            </tr>
+            <tr>
+                <td><input class="objeto" onclick="procesar();" type="button" value="calcular"></td>
+                <td><input class="objeto" onclick="limpiar();" type="button" value="limpiar"></td>
+            </tr>
+
+        </table>
+    </form>
+    
+</body>
+</html>
